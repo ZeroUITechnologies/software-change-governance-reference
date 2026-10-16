@@ -1,0 +1,47 @@
+# SPDX-FileCopyrightText: 2026 ZeroUI Technologies LLP
+# SPDX-License-Identifier: Apache-2.0
+
+version = 1
+SPDX-PackageName = "ZeroUI Software Change Governance Reference"
+SPDX-PackageSupplier = "ZeroUI Technologies LLP <https://www.zeroui.dev/>"
+SPDX-PackageDownloadLocation = "https://github.com/ZeroUITechnologies/software-change-governance-reference"
+
+[[annotations]]
+path = [
+  ".github/**",
+  "decision-evidence-record/v0.1/schema.json",
+  "decision-evidence-record/v0.1/examples/**",
+  "requirements-dev.txt",
+  "scripts/**",
+  "NOTICE",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 ZeroUI Technologies LLP"
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = [
+  "CHANGELOG.md",
+  "CITATION.cff",
+  "CONTRIBUTING.md",
+  "LICENSE",
+  "LICENSE-DECISION-REQUIRED.md",
+  "PUBLICATION-CHECKLIST.md",
+  "README.md",
+  "SECURITY.md",
+  "SHA256SUMS",
+  "TRADEMARKS.md",
+  "control-matrix/**",
+  "decision-evidence-record/*/README.md",
+  "docs/**",
+  "releases/**",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 ZeroUI Technologies LLP"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = "DCO"
+precedence = "override"
+SPDX-FileCopyrightText = "2004, 2006 The Linux Foundation and its contributors"
+SPDX-License-Identifier = "LicenseRef-DCO-1.1"

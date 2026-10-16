@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use these reference drafts, cite the artifact name and exact version."
+title: "ZeroUI Software Change Governance Reference"
+type: dataset
+authors:
+  - name: "ZeroUI Technologies LLP"
+version: "0.1.0"
+date-released: 2026-10-16
+repository-code: "https://github.com/ZeroUITechnologies/software-change-governance-reference"
+url: "https://github.com/ZeroUITechnologies/software-change-governance-reference/releases/tag/v0.1.0"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+abstract: >-
+  Versioned public-reference drafts comprising the ZeroUI Software Change
+  Governance Control Matrix and Decision Evidence Record schema. The artifacts
+  are conceptual, unvalidated drafts and do not constitute an independent
+  standard, certification, compliance mapping, or product-performance claim.
+keywords:
+  - software change governance
+  - AI coding governance
+  - decision evidence
+  - policy governance
+  - software delivery
+  - JSON Schema
+

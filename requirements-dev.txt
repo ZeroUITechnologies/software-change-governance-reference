@@ -1,0 +1,4 @@
+# SPDX-FileCopyrightText: 2026 ZeroUI Technologies LLP
+# SPDX-License-Identifier: Apache-2.0
+
+jsonschema[format]==4.26.0

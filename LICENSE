@@ -1,0 +1,57 @@
+# Licensing
+
+Copyright 2026 ZeroUI Technologies LLP.
+
+This repository uses two outbound licenses. No single license applies to every
+file.
+
+## Apache License 2.0
+
+The following implementation-oriented materials are licensed under the
+Apache License, Version 2.0 (`Apache-2.0`):
+
+- `.github/**`
+- `decision-evidence-record/v0.1/schema.json`
+- `decision-evidence-record/v0.1/examples/**`
+- `requirements-dev.txt`
+- `scripts/**`
+
+The complete license text is in [`LICENSES/Apache-2.0.txt`](LICENSES/Apache-2.0.txt).
+
+## Creative Commons Attribution 4.0 International
+
+The prose documentation, citation and release metadata, and Software Change
+Governance Control Matrix data are licensed under the Creative Commons
+Attribution 4.0 International Public License (`CC-BY-4.0`). This includes:
+
+- root Markdown documentation;
+- `CITATION.cff`;
+- `control-matrix/**`, including its JSON and CSV data;
+- `decision-evidence-record/**/README.md`;
+- `docs/**`; and
+- `releases/**`.
+
+The complete license text is in [`LICENSES/CC-BY-4.0.txt`](LICENSES/CC-BY-4.0.txt).
+
+Recommended attribution:
+
+> “ZeroUI Software Change Governance Reference v0.1.0” by ZeroUI Technologies
+> LLP, https://github.com/ZeroUITechnologies/software-change-governance-reference,
+> licensed under CC BY 4.0, https://creativecommons.org/licenses/by/4.0/.
+> Indicate if changes were made.
+
+## File-level precedence
+
+An SPDX identifier in a file takes precedence over the directory rules above.
+For formats that do not permit comments, the file scopes in this document and
+[`REUSE.toml`](REUSE.toml) are the applicable license notices.
+
+## Contributions and trademarks
+
+Contributions are made under the license applicable to the contributed file
+and must be certified under the Developer Certificate of Origin 1.1 in
+[`DCO`](DCO). See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+Neither license grants rights to ZeroUI names, logos, product names, or other
+marks except the limited factual attribution allowed by the applicable
+license. See [`TRADEMARKS.md`](TRADEMARKS.md).

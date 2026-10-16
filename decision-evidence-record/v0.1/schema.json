@@ -1,0 +1,283 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.zeroui.dev/schemas/decision-evidence-record-v0.1.schema.json",
+  "title": "ZeroUI Decision Evidence Record",
+  "description": "Reference schema for evidence associated with a governed software change decision.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "decision_id",
+    "recorded_at",
+    "status",
+    "actor",
+    "scope",
+    "artifacts",
+    "policies",
+    "evidence",
+    "outcome",
+    "rationale",
+    "accountability",
+    "recheck"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "decision_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "superseded",
+        "final"
+      ]
+    },
+    "actor": {
+      "type": "object",
+      "required": [
+        "type",
+        "id",
+        "accountable_owner"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "human",
+            "ai_assistant",
+            "ai_agent",
+            "automation"
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "agent": {
+          "type": "string"
+        },
+        "session_id": {
+          "type": "string"
+        },
+        "accountable_owner": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "repository"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string"
+        },
+        "service": {
+          "type": "string"
+        },
+        "environment": {
+          "type": "string"
+        },
+        "tenant": {
+          "type": "string"
+        },
+        "authorized_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "identifier",
+          "digest"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "identifier": {
+            "type": "string"
+          },
+          "digest": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "policies": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "version",
+          "result"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "reference": {
+            "type": "string"
+          },
+          "digest": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          },
+          "collected_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "guide",
+        "allow",
+        "warn",
+        "hold_for_review",
+        "block",
+        "correct",
+        "recheck",
+        "record_evidence",
+        "route_for_approval"
+      ]
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "accountability": {
+      "type": "object",
+      "required": [
+        "owner"
+      ],
+      "properties": {
+        "owner": {
+          "type": "string"
+        },
+        "approver": {
+          "type": "string"
+        },
+        "approved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "approval_reference": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "remediation": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "guidance": {
+          "type": "string"
+        },
+        "completed_reference": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "recheck": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_required",
+            "pending",
+            "passed",
+            "failed"
+          ]
+        },
+        "decision_id": {
+          "type": "string"
+        },
+        "checked_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": true
+    },
+    "release": {
+      "type": "object",
+      "properties": {
+        "artifact_digest": {
+          "type": "string"
+        },
+        "environment": {
+          "type": "string"
+        },
+        "deployed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "deployment_reference": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "extensions": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

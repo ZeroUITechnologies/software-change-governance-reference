@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "der_example_dependency_change_001",
+  "recorded_at": "2026-10-16T10:05:00Z",
+  "status": "final",
+  "actor": {
+    "type": "ai_agent",
+    "id": "agent:example-coding-session",
+    "agent": "example-coding-agent",
+    "session_id": "session:redacted",
+    "accountable_owner": "team:payments"
+  },
+  "scope": {
+    "repository": "payments-api",
+    "service": "payments",
+    "environment": "production",
+    "authorized_actions": [
+      "update_dependency",
+      "run_tests",
+      "open_pull_request"
+    ]
+  },
+  "artifacts": [
+    {
+      "type": "git_commit",
+      "identifier": "example-commit",
+      "digest": "sha256:example-artifact-digest"
+    }
+  ],
+  "policies": [
+    {
+      "id": "ORG-DEPENDENCY-REVIEW",
+      "version": "3.2",
+      "result": "hold_for_review"
+    },
+    {
+      "id": "ORG-RELEASE-VALIDATION",
+      "version": "2.1",
+      "result": "passed"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "test_result",
+      "reference": "evidence:test-run-1042",
+      "digest": "sha256:example-evidence-digest",
+      "result": "passed",
+      "collected_at": "2026-10-16T09:28:00Z"
+    }
+  ],
+  "outcome": "allow",
+  "rationale": "Independent authorized review completed and required validation passed for the final artifact.",
+  "accountability": {
+    "owner": "team:payments",
+    "approver": "role:payments-service-owner",
+    "approved_at": "2026-10-16T09:29:00Z",
+    "approval_reference": "approval:example-882"
+  },
+  "remediation": {
+    "required": true,
+    "guidance": "Obtain independent approval for the sensitive dependency update.",
+    "completed_reference": "approval:example-882"
+  },
+  "recheck": {
+    "status": "passed",
+    "decision_id": "der_example_dependency_change_001_recheck",
+    "checked_at": "2026-10-16T09:30:00Z"
+  },
+  "release": {
+    "artifact_digest": "sha256:example-artifact-digest",
+    "environment": "production",
+    "deployed_at": "2026-10-16T10:00:00Z",
+    "deployment_reference": "deployment:example-551"
+  },
+  "extensions": {
+    "example_only": true
+  }
+}
